@@ -12,17 +12,18 @@ public class PowerActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
+        PowerControlApplication app = (PowerControlApplication)getApplicationContext();
+        powerControl = app.getPowerControl();
     }
     
     public void startImportant(View button) {
-        PowerManager powerManager = (PowerManager)getSystemService(POWER_SERVICE);
-        wakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, "PowerControl");
-        wakeLock.acquire();
+        powerControl.disablePowerOff();
     }
     
     public void stopImportant(View button) {
-        wakeLock.release();
+        powerControl.enablePowerOff();
     }
     
-    private PowerManager.WakeLock wakeLock;
+    private PowerControl powerControl;
 }
