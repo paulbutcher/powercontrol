@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.PowerManager;
 import android.view.View;
 
-public class PowerControl extends Activity
+public class PowerActivity extends Activity
 {
     @Override
     public void onCreate(Bundle savedInstanceState)

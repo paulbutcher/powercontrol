@@ -8,7 +8,7 @@ import android.util.Log
 
 import com.borachio.junit3.MockFactory
 
-class PowerControlTest
+class PowerActivityTest
   extends ActivityUnitTestCase[PowerControl](classOf[PowerControl]) 
   with MockFactory {
     
