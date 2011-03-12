@@ -2,7 +2,7 @@ package com.paulbutcher.powercontrol;
 
 import android.app.Application;
 
-public class PowerControlApplication extends Application implements PowerControlEnvironment
+public class PowerControlApplication extends Application
 {
     public void onCreate() {
         powerControl = new PowerControlImpl(this);
@@ -12,5 +12,5 @@ public class PowerControlApplication extends Application implements PowerControl
         return powerControl;
     }
     
-    PowerControl powerControl;
+    protected PowerControl powerControl;
 }

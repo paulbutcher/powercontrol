@@ -13,7 +13,7 @@ public class PowerActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        PowerControlEnvironment app = (PowerControlEnvironment)getApplicationContext();
+        PowerControlApplication app = (PowerControlApplication)getApplication();
         powerControl = app.getPowerControl();
     }
     
