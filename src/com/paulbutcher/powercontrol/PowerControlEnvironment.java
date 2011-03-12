@@ -1,6 +1,6 @@
 package com.paulbutcher.powercontrol;
 
-public interface PowerControlApplication
+public interface PowerControlEnvironment
 {
     PowerControl getPowerControl();
 }
