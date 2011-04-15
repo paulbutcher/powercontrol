@@ -12,16 +12,6 @@ class PowerActivityTest
     
   val startIntent = new Intent(Intent.ACTION_MAIN)
     
-  override def setUp() {
-    super.setUp
-    resetExpectations
-  }
-  
-  override def tearDown() {
-    verifyExpectations
-    super.tearDown
-  }
-  
   def testStartImportant {
     val mockPowerControl = mock[PowerControl]
     val application = new PowerControlApplication {
@@ -30,8 +20,10 @@ class PowerActivityTest
     setApplication(application)
     startActivity(startIntent, null, null)
     
-    mockPowerControl expects 'disablePowerOff once
+    withExpectations {
+      mockPowerControl expects 'disablePowerOff once
     
-    getActivity.startImportant(null)
+      getActivity.startImportant(null)
+    }
   }
 }
